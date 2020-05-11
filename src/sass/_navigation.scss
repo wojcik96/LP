@@ -1,0 +1,137 @@
+// .navigation{
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//    right: 0;
+//    display: flex;  
+//    justify-content: flex-end;
+//    align-items: center;
+//    height: 65px;
+//    background-color: $pageBg ;
+//    z-index: 1;
+//  }
+// .navigation__logo{
+//    height: 100px;
+//    position: absolute;
+//    top: 13px;
+//    left:-24px;
+// }
+// .navigation__contener-ul{
+//    display: flex;
+//    list-style: none; 
+//    width: 90%;
+//    height: 100%;
+// }
+// .navigation__li-Element{
+//    flex-grow: 1;
+//    width: 100%;
+//    height: 100%;
+// }
+
+// .navigation__link{   
+//    display: flex;
+//    justify-content: center;  
+//    align-items: center; 
+//    color: $fontsColor;
+//    height: 100%;
+//    font-size: 24px;
+//    text-decoration: none;
+//    text-transform: uppercase;   
+//    box-sizing: border-box;
+//    border-bottom: 4px solid $pageBg;
+//    transition: border .2s;
+//    cursor: pointer;
+//         &:hover{
+//       border-bottom: 4px solid black;
+//    }
+// }
+.navigation{
+   padding: 0;
+   margin: 0;
+   display: flex;
+   position: relative;
+   width: 100vw;
+   background-color: $pageBg;
+   @include mediaQ (tablet-large) {
+       justify-content: flex-end;
+      padding: 15px 20px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1;
+   }
+ }
+ .navigation__logo{
+   height: 80px;
+   position: absolute;  
+   top: 5px;
+   left: -40px;
+   @include mediaQ(smartphone){
+      top:15px;
+      left: -25px;
+   }
+  }
+ .navigation__contener-ul{   
+   width: 100vw;
+   margin: 80px 0;
+   padding: 0; 
+   @include mediaQ (tablet-large) {
+      width: 90vw;
+      margin: 0 15px 0 0;
+      display: flex;
+      justify-content: space-evenly;
+   }
+   @include mediaQ (desktop-small) {
+      margin-right: 30px;
+   }
+ }
+.navigation__li-Element{
+   font-size: 35px;
+   text-transform: uppercase;
+   list-style: none;    
+   @include mediaQ (tablet-large) {
+      width: 100%;
+   }
+   &:last-child .navigation__link{
+     border-bottom: none;
+     @include mediaQ (tablet-large) {
+      border-bottom: 2px solid $pageBg;      
+   }
+   } 
+  
+}
+.navigation__link{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   padding: 10px 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   color: black;   
+   border-bottom: black 2px solid; 
+   @include mediaQ (tablet-large) {
+      border-bottom: 2px solid $pageBg;
+      width: 100%;
+   }
+}
+
+.navigation__icon{
+   position: fixed;
+   right: 20px;
+   top: 20px;
+   background-color: #fff;
+   width: 40px;
+   height: 10px;
+   &::before,&::after{
+      content: "";
+      display: block;
+      position: absolute;
+      height: 10px;
+      width: 100%;
+      background-color: #444;
+   }
+   &::after{
+      bottom: 0;
+   }
+}
+ 

@@ -1,0 +1,30 @@
+.footer{
+   position: absolute;
+   left: 0;
+   right: 0;
+   background-color: #000;
+}
+
+.footer__contact{
+   display: flex;
+   flex-direction: column;
+   align-items: center; 
+   text-align: center;
+   color: rgb(143, 140, 140);
+   @include mediaQ(smartphone-large) {
+      flex-direction: row;}
+      justify-content: space-evenly;
+}
+.footer__contact-cointeiner{
+   margin-top: 15px;
+}
+.footer__fast-contact{
+   text-transform: uppercase;
+
+}
+.footer__map-cointeiner{
+   display: flex;
+   justify-content: center;
+   margin: 30px 15px;  
+   height: 200px;  
+   }

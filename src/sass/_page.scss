@@ -1,0 +1,16 @@
+body { 
+  margin: 0;
+  background-color: $pageBg;
+  font-family: $mainFonts;  
+}
+.wrapper{
+box-sizing: border-box;
+margin: 0 auto;
+max-width: 1400px;
+overflow: hidden;
+background-color: $pageBg;
+}
+
+html {
+  scroll-behavior: smooth;
+}
