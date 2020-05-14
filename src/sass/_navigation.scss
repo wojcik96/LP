@@ -1,73 +1,34 @@
-// .navigation{
-//    position: fixed;
-//    top: 0;
-//    left: 0;
-//    right: 0;
-//    display: flex;  
-//    justify-content: flex-end;
-//    align-items: center;
-//    height: 65px;
-//    background-color: $pageBg ;
-//    z-index: 1;
-//  }
-// .navigation__logo{
-//    height: 100px;
-//    position: absolute;
-//    top: 13px;
-//    left:-24px;
-// }
-// .navigation__contener-ul{
-//    display: flex;
-//    list-style: none; 
-//    width: 90%;
-//    height: 100%;
-// }
-// .navigation__li-Element{
-//    flex-grow: 1;
-//    width: 100%;
-//    height: 100%;
-// }
 
-// .navigation__link{   
-//    display: flex;
-//    justify-content: center;  
-//    align-items: center; 
-//    color: $fontsColor;
-//    height: 100%;
-//    font-size: 24px;
-//    text-decoration: none;
-//    text-transform: uppercase;   
-//    box-sizing: border-box;
-//    border-bottom: 4px solid $pageBg;
-//    transition: border .2s;
-//    cursor: pointer;
-//         &:hover{
-//       border-bottom: 4px solid black;
-//    }
-// }
 .navigation{
    padding: 0;
    margin: 0;
    display: flex;
-   position: relative;
+   position: fixed;
    width: 100vw;
    background-color: $pageBg;
+   z-index: 1;
+   transition: transform  linear .4s;
+   transform: translateY(-100%);
+   &--burger-active{
+    transform: translateY(0%);  
+   }
    @include mediaQ (tablet-large) {
-       justify-content: flex-end;
+      justify-content: flex-end;
       padding: 15px 20px;
       position: fixed;
       left: 0;
-      right: 0;
-      z-index: 1;
+      right: 0;     
+      transform: translateY(0%); 
    }
  }
+
  .navigation__logo{
    height: 80px;
    position: absolute;  
    top: 5px;
    left: -40px;
    @include mediaQ(smartphone){
-      top:15px;
+      top:10px;
       left: -25px;
    }
   }
@@ -86,7 +47,7 @@
    }
  }
 .navigation__li-Element{
-   font-size: 35px;
+   font-size: 25px;
    text-transform: uppercase;
    list-style: none;    
    @include mediaQ (tablet-large) {
@@ -96,6 +57,9 @@
      border-bottom: none;
      @include mediaQ (tablet-large) {
       border-bottom: 2px solid $pageBg;      
+      &:hover{
+         border-bottom: black 2px solid;
+      }
    }
    } 
   
@@ -109,29 +73,52 @@
    text-decoration: none;
    color: black;   
    border-bottom: black 2px solid; 
+   transition: linear .3s;
+
+   &:hover{
+      border-bottom: black 2px solid;
+   }
    @include mediaQ (tablet-large) {
       border-bottom: 2px solid $pageBg;
       width: 100%;
+      font-size: 30px;
    }
+ 
 }
 
-.navigation__icon{
+.navigation-icon{
    position: fixed;
    right: 20px;
    top: 20px;
-   background-color: #fff;
    width: 40px;
-   height: 10px;
-   &::before,&::after{
-      content: "";
-      display: block;
-      position: absolute;
-      height: 10px;
-      width: 100%;
-      background-color: #444;
-   }
-   &::after{
-      bottom: 0;
+   height: 40px;
+   z-index: 500;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   cursor: pointer;
+   @include mediaQ(tablet-large){
+      display: none;
    }
 }
+
  
+.navigation-icon__first-icon,.navigation-icon__second-icon,.navigation-icon__last-icon{
+   width: 100%;
+   height: 5px;
+   background: #000000;
+   border-radius: 5px;
+   box-shadow: black 0px 0px 10px -1px;
+   transition: .2s linear;
+}  
+
+.navigation-icon--active .navigation-icon__first-icon{
+   transform: rotate(45deg) translateY(16px) ;
+}
+
+.navigation-icon--active .navigation-icon__last-icon{
+   transform: rotate(-45deg) translateY(-16px) ;
+}
+.navigation-icon--active .navigation-icon__second-icon{
+   opacity: 0;
+}

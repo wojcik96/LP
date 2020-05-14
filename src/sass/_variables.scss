@@ -1,29 +1,7 @@
-/* Color Theme Swatches in Hex */
-$fontsColor: #202426;
-$elementsBg: #6C733D;
-$shodowColor: #9DA65D;
-$gray: #8C8C88;
 $pageBg: #F2F2F2;
-
-/* Color Theme Swatches in RGBA */
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-1-rgba: rgba(31,35,38, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-2-rgba: rgba(108,114,60, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-3-rgba: rgba(157,165,92, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-4-rgba: rgba(139,140,136, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-5-rgba: rgba(242,242,242, 1);
-
-/* Color Theme Swatches in HSLA */
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-1-hsla: hsla(202, 9, 13, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-2-hsla: hsla(67, 30, 34, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-3-hsla: hsla(67, 29, 50, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-4-hsla: hsla(67, 1, 54, 1);
-$wilderness-landscape-forest-with-pine-trees-and-moss-on-rocks-5-hsla: hsla(0, 0, 95, 1);
-
 $mainFonts: 'Roboto', sans-serif;
 $secondFonts:'Noto Sans KR', sans-serif;
-
 $fontSH2:35px;
-
 $breakpoints:(
    smartphone : (min-width:420px),
    smartphone-large : (min-width:640px),
@@ -33,3 +11,4 @@ $breakpoints:(
    desktop-medium : (min-width:1600px),
    desktop-large : (min-width:1900px),
 );
+$maxWidth: 1400px;
